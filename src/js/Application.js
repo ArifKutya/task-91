@@ -14,7 +14,6 @@ export default class Application extends EventEmitter {
     super();
     this._beat = new Beat();
     this._lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    this.message = []
     this._beat.on(Beat.events.BIT,() => {
       this._create();
     })
@@ -33,8 +32,9 @@ export default class Application extends EventEmitter {
   }
   _create() {
     for (let lyric of this._lyrics) {
-      this.message.push( 'HA' + ' ' + lyric + "</br>")
+      let message = `.message created for ${lyric} </br>`;
+      document.writeln(message);
     }
-    document.writeln(this.message);
+
   }
 }
