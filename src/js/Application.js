@@ -1,6 +1,5 @@
 import EventEmitter from "eventemitter3";
 import Beat from "./Beat";
-import {message} from "sass-lint/lib/exceptions";
 
 
 
@@ -34,7 +33,7 @@ export default class Application extends EventEmitter {
   }
   _create() {
     for (let lyric of this._lyrics) {
-      this.message.push('Boom' + ' ' + lyric + "</br>")
+      this.message.push( 'HA' + ' ' + lyric + "</br>")
     }
     document.writeln(this.message);
   }
