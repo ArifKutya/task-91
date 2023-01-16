@@ -14,14 +14,14 @@ export default class Application extends EventEmitter {
     super();
     this._beat = new Beat();
     this._lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    this.message = "Boom"
+    this._messages = []
     this._beat.on(Beat.events.BIT,() => {
       this._create();
     })
 
 
     // const lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
-    // let count = 0;
+    // // let count = 0;
 
     const message = document.createElement("div");
     message.classList.add("message");
@@ -34,8 +34,9 @@ export default class Application extends EventEmitter {
   }
   _create() {
     for (let lyric of this._lyrics) {
-      let stayinallive  = `${this.message} + ${lyric} </br>`;
-      document.writeln(stayinallive);
+      let message = `message created for ${lyric} </br>`;
+      this._messages.push(message)
+      document.writeln(message);
     }
 
   }
