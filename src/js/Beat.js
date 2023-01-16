@@ -1,4 +1,4 @@
-const EventEmitter = require(`eventemitter3`)
+import EventEmitter from "eventemitter3";
 export default class Beat extends EventEmitter{
   static get events() {
     return {
@@ -10,7 +10,7 @@ export default class Beat extends EventEmitter{
     super();
     setInterval(() => {
       this.emit(Beat.events.BIT);
-    }, 600);
+    }, 1000);
   }
 }
 Beat.events.BIT = "bit"
