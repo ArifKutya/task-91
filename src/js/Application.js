@@ -1,5 +1,7 @@
 import EventEmitter from "eventemitter3";
 import Beat from "./Beat";
+import {message} from "sass-lint/lib/exceptions";
+
 
 export default class Application extends EventEmitter {
   static get events() {
@@ -12,6 +14,7 @@ export default class Application extends EventEmitter {
     super();
     this._beat = new Beat();
     this._lyrics = ["Ah", "ha", "ha", "ha", "stayin' alive", "stayin' alive"];
+    this.message = ["Boom"]
     this._beat.on(Beat.events.BIT,() => {
       this._create();
     })
@@ -21,7 +24,7 @@ export default class Application extends EventEmitter {
     // let count = 0;
 
     const message = document.createElement("div");
-    message.classList.add("message");
+    message.classList.add(".message");
     message.innerText = "Ah";
 
     document.querySelector(".main").appendChild(message);
@@ -30,7 +33,7 @@ export default class Application extends EventEmitter {
   }
   _create() {
     for (let lyric of this._lyrics) {
-      document.writeln('.message created for: '  + lyric )
+      document.writeln(this.message  + lyric )
     }
 
   }
