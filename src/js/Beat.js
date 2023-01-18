@@ -10,7 +10,7 @@ export default class Beat extends EventEmitter {
   constructor() {
     super()
     setInterval(() => {
-      this.emit(Ump.events.BIT);
+      this.emit(Beat.events.BIT);
     }, 1000);
   }
 }
